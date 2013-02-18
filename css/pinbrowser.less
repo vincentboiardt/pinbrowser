@@ -1,0 +1,88 @@
+.pinbrowser-noscroll {
+	overflow: hidden !important;
+}
+
+.pinbrowser {
+	position: fixed;
+	background: #000;
+	background: rgba(0,0,0,.7);
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow-y: scroll;
+	
+	.browser-wrap {
+		position: relative;
+		max-width: 800px;
+		margin: 50px auto;
+	}
+	
+	.browser {
+		padding: 20px;
+		background: #fff;
+		
+		&.loading {
+			min-height: 300px;
+			background: #fff url(img/loader.gif) no-repeat 50% 50%;
+			
+			> * {
+				visibility: hidden;
+			}
+		}
+	}
+	
+	.control {
+		position: absolute;
+		top: 0;
+		right: -70px;
+		height: 70px;
+		width: 70px;
+		background: #eee;
+		color: #555;
+		text-align: center;
+		line-height: 70px;
+		font-size: 36px;
+		cursor: pointer;
+		
+		.tip {
+			display: none;
+			position: absolute;
+			top: 80px;
+			right: 0;
+			background: #eee;
+			border: 2px solid #ddd;
+			padding: 12px 15px;
+			font-size: 13px;
+			line-height: 1;
+			white-space: nowrap;
+		}
+		
+		&.prev {
+			right: auto;
+			left: -70px;
+			
+			.tip {
+				right: auto;
+				left: 0;
+			}
+		}
+	}
+	
+	.pin-close {
+		position: absolute;
+		top: -25px;
+		right: 0;
+		cursor: pointer;
+		color: #fff;
+		font-size: 13px;
+		text-decoration: underline;
+		
+		&:before {
+			position: absolute;
+			left: -1em;
+			content: 'x ';
+			text-decoration: none;
+		}
+	}
+}
